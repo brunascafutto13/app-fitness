@@ -68,4 +68,23 @@ router.get('/users', (req, res) => {
   });
 });
 
+router.get('/users/:email', (req, res) => {
+  const email = req.params.email;
+
+  const query = `SELECT username, email, peso FROM users WHERE email = ?`;
+
+  db.query(query, [email], (error, results) => {
+    if (error) {
+      return res.status(500).send({ message: error.message });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).send({ message: 'User not found.' });
+    }
+
+    const user = results[0];
+    res.status(200).send(user);
+  });
+});
+
 module.exports = router;

@@ -11,7 +11,6 @@ function Login() {
     event.preventDefault(); // Evita o recarregamento da página
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    console.log(email,password)
     try {
       const response = await authService.login(email, password);
       console.log(response.data);
