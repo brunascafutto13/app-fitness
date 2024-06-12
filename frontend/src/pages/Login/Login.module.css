@@ -1,0 +1,185 @@
+.body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  .container{
+    width: 70%;
+    display: flex;
+    margin-left: 15%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 100px 0;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+
+  .Logo {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+  .wrapperTop {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin-bottom: 2vh;
+  }
+
+
+  .wrapperInput{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .wrapperInput label{
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .esqueci{
+    color: #daacff;
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  .inserir{
+    margin-top: 0.5rem;
+    color: #daacff;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .input {
+    margin-top: 0.5rem;
+    padding: 0px 8px;
+    border-radius: 5px;
+    background-color: #E3E2E2;
+    height: 2rem;
+    outline: none;
+    border: none;
+  }
+
+  .button {
+    margin-top: 12px;
+    padding: 16px 0;
+    width: 50%;
+    background-color: #daacff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  
+
+  
+  @media (max-width: 960px){
+
+    .body{
+      position: relative;
+      z-index: 1;
+      min-height: 100vh; /* Garante que o .body cubra a altura da viewport */
+      min-width: 100vw; /* Garante que o .body cubra a largura da viewport */
+    }
+
+    .body::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;    
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+      width: 100vw; /* Define largura para 100% da viewport */
+      height: 100vh; /* Define altura para 100% da viewport */
+      opacity: 0.3;
+      z-index: -1;
+      
+    }
+
+    .container{
+      width: 100%;
+    }
+    .input{
+      margin-top:1rem
+    }
+    .title{
+      margin-top: 3rem;
+    }
+    .esqueci{
+      font-size: 30px;
+      margin-top:3rem;
+    }
+    .Logo {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+
+    .button{
+      width:80%
+    }
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrapperInput, .wrapperInput2{
+      width: 70%;
+    }
+
+    .button {
+      width: 75%;
+    }
+
+    .body {
+      position: relative;
+      overflow: hidden;
+      background-color: transparent;
+    }
+  
+    .body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.35;
+      z-index: -1;
+    }
+  
+    .body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.15);
+      z-index: -1;
+    }
+  }
